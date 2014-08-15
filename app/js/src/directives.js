@@ -1,4 +1,5 @@
 'user strict';
 
-var moduleDirectives = angular.module('app.directives', []);
+var moduleDirective = angular.module('app.directives', ['app.services']);
 
+moduleDirective.directive("boarderlist", require("./directives/BoarderListDirective"));

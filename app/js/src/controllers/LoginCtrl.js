@@ -15,7 +15,7 @@ var LoginCtrl = module.exports = function ($scope, $translate, $state, LoginServ
             LoginService.doLogin($scope.email, $scope.password, $scope.rememberMe).then(
                 function (isOk) {
                     if (isOk) {
-                        $state.go("main");
+                        $state.go("menu");
                     } else {
                         $scope.errormsg = $translate('login.message.error');
                     }

@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="styles/login.css"/>
     <link rel="stylesheet" href="styles/main.css"/>
     <link rel="stylesheet" href="styles/header.css"/>
+    <link rel="stylesheet" href="styles/menu.css"/>
 </head>
-<body>
+<body class="main">
     <div ui-view="header"></div>
-    <div ui-view></div>
+    <div ui-view="content" class="content"></div>
+    <div ui-view="footer"></div>
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/lib/angular/angular.min.js"></script>

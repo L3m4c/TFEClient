@@ -42,3 +42,9 @@ body {
     color: #c0392b;
     font-style: italic;
 }
+.btn-primary {
+    background-color: #4B77BE;
+}
+.login-title {
+    color: #2c3e50;
+}

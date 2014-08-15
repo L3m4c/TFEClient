@@ -1,27 +1,43 @@
-var app =  angular.module('app', ['ui.router','ngGrid', 'pascalprecht.translate', 'app.controllers', 'app.services']);
+var app =  angular.module('app', ['ui.router','ngGrid', 'pascalprecht.translate', 'app.controllers', 'app.services', 'app.directives']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/login");
     //
     // Now set up the states
     $stateProvider
         .state('login', {
-            url: "/",
-            templateUrl: "views/login.html",
-            controller: 'LoginCtrl as ctrl'
-        }).state('main', {
-            url: "/main",
+            url: "/login",
             views: {
-                '': {
-                    templateUrl: 'views/main.html',
-                    controller: 'MainCtrl as ctrl'
+                content: {
+                    templateUrl: "views/login.html",
+                    controller: 'LoginCtrl as ctrl'
+                }
+            }
+        }).state('main-content', {
+            abstract: true,
+            views: {
+                'footer': {
+                    templateUrl: 'views/footer.html'
                 },
                 'header': {
                     templateUrl: 'views/header.html',
                     controller: 'HeaderCtrl as ctrl'
+                },
+                'content': {
+                    templateUrl: 'views/main-content.html'
                 }
             }
+        }).state('menu', {
+            url: "/menu",
+            parent: "main-content",
+            templateUrl: 'views/menu.html',
+            controller: 'MenuCtrl as ctrl'
+        }).state('meal', {
+            url: "/meal",
+            parent: "main-content",
+            templateUrl: 'views/meal.html',
+            controller: 'MealCtrl as ctrl'
         })
 }).config(['$httpProvider', function ($httpProvider) {
     // Autorisation des cookies pour les requétes CORS

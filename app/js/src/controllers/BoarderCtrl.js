@@ -1,11 +1,4 @@
-/**
- * Created by Samuel on 15/08/2014.
- */
-var MainCtrl = module.exports = function ($scope, BoarderService) {
-
-    BoarderService.getBoarders().then(function (data) {
-       $scope.data = data;
-    });
+var BoarderCtrl = module.exports = function ($scope, BoarderService) {
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -29,4 +22,8 @@ var MainCtrl = module.exports = function ($scope, BoarderService) {
         multiSelect: false,
         showGroupPanel: false
     };
+
+    BoarderService.getBoarders().then(function (data) {
+        $scope.data = data;
+    });
 };

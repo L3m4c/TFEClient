@@ -1,5 +1,16 @@
+.main {
+    min-width: 360px;
+}
+.content {
+    margin-top: 10px;
+}
+
 .gridStyle {
     border: 1px solid rgb(212,212,212);
     width: 99%;
-    height: 500px;
+    height: 400px;
+}
+
+.footer {
+    color: #777;
 }
