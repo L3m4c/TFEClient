@@ -1,4 +1,5 @@
 {
+    "common.title" : "TFE",
     "common.label.disconnect" : "Déconnexion",
     "login.title": "Authentification",
     "login.label.rememberme": "Se souvenir de moi ?",

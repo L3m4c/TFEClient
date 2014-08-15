@@ -1,6 +1,3 @@
-/**
- * Created by Samuel on 15/08/2014.
- */
 var BoarderService = module.exports = function (SERVER_ROOT, $http, $q) {
     this.$http = $http;
     this.SERVER_ROOT = SERVER_ROOT;

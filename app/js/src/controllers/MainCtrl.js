@@ -1,7 +1,7 @@
 /**
  * Created by Samuel on 15/08/2014.
  */
-var MainCtrl = module.exports = function ($scope, LoginService, BoarderService) {
+var MainCtrl = module.exports = function ($scope, BoarderService) {
 
     BoarderService.getBoarders().then(function (data) {
        $scope.data = data;
@@ -28,9 +28,5 @@ var MainCtrl = module.exports = function ($scope, LoginService, BoarderService) 
         enableCellSelection: false,
         multiSelect: false,
         showGroupPanel: false
-    };
-
-    $scope.disconnect  = function () {
-        LoginService.doLogout();
     };
 };

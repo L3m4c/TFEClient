@@ -9,11 +9,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('login', {
             url: "/",
             templateUrl: "views/login.html",
-            controller: 'LoginCtrl'
+            controller: 'LoginCtrl as ctrl'
         }).state('main', {
             url: "/main",
-            templateUrl: "views/main.html",
-            controller: 'MainCtrl'
+            views: {
+                '': {
+                    templateUrl: 'views/main.html',
+                    controller: 'MainCtrl as ctrl'
+                },
+                'header': {
+                    templateUrl: 'views/header.html',
+                    controller: 'HeaderCtrl as ctrl'
+                }
+            }
         })
 }).config(['$httpProvider', function ($httpProvider) {
     // Autorisation des cookies pour les requétes CORS

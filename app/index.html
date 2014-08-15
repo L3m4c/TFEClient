@@ -5,12 +5,15 @@
     <title></title>
     <link rel="stylesheet" href="styles/lib/bootstrap.min.css"/>
     <link rel="stylesheet" href="styles/lib/ng-grid.min.css"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/lib/bootstrap/ie10-viewport-bug-workaround.js"></script>
     <link rel="stylesheet" href="styles/login.css"/>
     <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="styles/header.css"/>
 </head>
 <body>
+    <div ui-view="header"></div>
     <div ui-view></div>
 
     <!-- Placed at the end of the document so the pages load faster -->
@@ -21,6 +24,7 @@
     <script src="js/lib/angular-translate/angular-translate-loader-static-files.js"></script>
     <script src="js/lib/jquery-2.1.1.min.js"></script>
     <script src="js/lib/ng-grid-2.0.10.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
