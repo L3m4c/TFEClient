@@ -34,7 +34,7 @@
     color: #ecf0f1;
 }
 
-.row {
+.row-menu {
     margin: 10px;
     color: #ecf0f1;
     max-width: 570px;
@@ -42,7 +42,7 @@
 }
 
 
-.row > div {
+.row-menu > div {
     box-sizing: border-box;
     border-radius: 15px;
     margin: 10px;

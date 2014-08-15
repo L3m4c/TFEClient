@@ -1,4 +1,4 @@
-var app =  angular.module('app', ['ui.router','ngGrid', 'pascalprecht.translate', 'app.controllers', 'app.services', 'app.directives']);
+var app =  angular.module('app', ['ui.router', 'ui.bootstrap', 'ngGrid', 'pascalprecht.translate', 'app.controllers', 'app.services', 'app.directives']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     // For any unmatched url, redirect to /state1

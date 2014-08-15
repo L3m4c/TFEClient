@@ -20,6 +20,9 @@ var BoarderCtrl = module.exports = function ($scope, BoarderService) {
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
         multiSelect: false,
+        afterSelectionChange: function(row, event) {
+            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+        },
         showGroupPanel: false
     };
 
