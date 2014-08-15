@@ -1,0 +1,9 @@
+{
+    "common.label.disconnect" : "Déconnexion",
+    "login.title": "Authentification",
+    "login.label.rememberme": "Se souvenir de moi ?",
+    "login.placeholder.email": "Adresse email",
+    "login.placeholder.password": "Mot de passe",
+    "login.label.signin": "Connexion",
+    "login.message.error": "Renseignements invalides."
+}
