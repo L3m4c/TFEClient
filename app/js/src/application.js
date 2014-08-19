@@ -38,6 +38,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: 'views/meal.html',
             controller: 'MealCtrl as ctrl'
+        }).state('swaddle', {
+            url: "/swaddle",
+            parent: "main-content",
+            templateUrl: 'views/swaddle.html',
+            controller: 'SwaddleCtrl as ctrl'
+        }).state('insulinDosage', {
+            url: "/insulinDosage",
+            parent: "main-content",
+            templateUrl: 'views/insulinDosage.html',
+            controller: 'InsulinDosageCtrl as ctrl'
         })
 }).config(['$httpProvider', function ($httpProvider) {
     // Autorisation des cookies pour les requétes CORS

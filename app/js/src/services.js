@@ -7,3 +7,5 @@ moduleService.constant('SERVER_ROOT', RouteService());
 moduleService.service("LoginService", require('./services/LoginService'));
 moduleService.service("BoarderService", require('./services/BoarderService'));
 moduleService.service("MealService", require('./services/MealService'));
+moduleService.service("SwaddleService", require('./services/SwaddleService'));
+moduleService.service("InsulinDosageService", require('./services/InsulinDosageService'));
