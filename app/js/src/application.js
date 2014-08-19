@@ -36,8 +36,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }).state('meal', {
             url: "/meal",
             parent: "main-content",
-            templateUrl: 'views/meal.html',
+            templateUrl: '../../views/meal.html',
             controller: 'MealCtrl as ctrl'
+        }).state('addmeal', {
+            url: "/meal/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-meal.html',
+            controller: 'AddMealCtrl as ctrl'
         }).state('swaddle', {
             url: "/swaddle",
             parent: "main-content",
