@@ -1,0 +1,11 @@
+<boarderlist selected-boarders="selectedBoarders" xmlns="http://www.w3.org/1999/html"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <div>
+        <input class="number" type="text" ng-model="comment" />
+
+
+    </div>
+    <button ng-click="ctrl.ajouterObservation()" class="btn btn-primary" ui-sref="observation">Valider</button>
+</div>

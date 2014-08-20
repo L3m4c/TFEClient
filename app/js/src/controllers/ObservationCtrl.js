@@ -1,4 +1,4 @@
-var SwaddleCtrl = module.exports = function ($scope, SwaddleService) {
+var ObservationCtrl = module.exports = function ($scope, ObservationService) {
     $scope = $scope;
 
 
@@ -15,6 +15,10 @@ var SwaddleCtrl = module.exports = function ($scope, SwaddleService) {
                 displayName : 'Personnel'
             },
             {
+                field : 'comment',
+                displayName : 'Observation'
+            },
+            {
                 field : 'date',
                 displayName : 'Date'
             }],
@@ -28,10 +32,10 @@ var SwaddleCtrl = module.exports = function ($scope, SwaddleService) {
         showGroupPanel: true
     };
 
-    SwaddleService.getSwaddles().then(function (data) {
-        $scope.data = data.map(function(swaddle) {
-            swaddle.date = new Date(swaddle.date);
-            return swaddle;
+    ObservationService.getObservations().then(function (data) {
+        $scope.data = data.map(function(observation) {
+            observation.date = new Date(observation.date);
+            return observation;
         });
     });
 };

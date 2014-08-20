@@ -49,10 +49,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/swaddle.html',
             controller: 'SwaddleCtrl as ctrl'
         }).state('insulinDosage', {
-            url: "/insulinDosage",
+            url: "/insulin/insulinDosage",
             parent: "main-content",
-            templateUrl: 'views/insulinDosage.html',
+            templateUrl: '../../views/insulinDosage.html',
             controller: 'InsulinDosageCtrl as ctrl'
+        }).state('addinsulinDosage', {
+            url: "/insulin/add-insulinDosage",
+            parent: "main-content",
+            templateUrl: '../../views/add-insulinDosage.html',
+            controller: 'AddInsulinDosageCtrl as ctrl'
+        }).state('observation', {
+            url: "/observation",
+            parent: "main-content",
+            templateUrl: '../../views/observation.html',
+            controller: 'ObservationCtrl as ctrl'
+        }).state('addobservation', {
+            url: "/addobservation",
+            parent: "main-content",
+            templateUrl: '../../views/add-observation.html',
+            controller: 'AddObservationCtrl as ctrl'
         })
 }).config(['$httpProvider', function ($httpProvider) {
     // Autorisation des cookies pour les requétes CORS
