@@ -1,0 +1,37 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <!-- <p>Date début:
+    <datepicker ng-model="dateStart" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    </p>
+    <p>Date fin:
+    <datepicker ng-model="dateEnd" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    </p>
+    -->
+    <p>Médecin traitant:
+        <input type="text" ng-model="doctor"/>
+    </p>
+    <p>Produit / Médicament:
+        <input type="text" ng-model="nameMedic"/>
+    </p>
+    <p>Dosage:
+        <input type="text" ng-model="dosage"/>
+    </p>
+    <p>Unité:
+        <input type="text" ng-model="unit"/>
+    </p>
+    <p>Matin:
+        <input type="text" ng-model="morning"/>
+    </p>
+    <p>Midi:
+        <input type="text" ng-model="midday"/>
+    </p>
+    <p>Soir:
+        <input type="text" ng-model="evening"/>
+    </p>
+    <p>Nuit:
+        <input type="text" ng-model="night"/>
+    </p>
+    <button ng-click="ctrl.ajouterDrugTreartment()" class="btn btn-primary" ui-sref="drugTreatment">Valider</button>
+</div>

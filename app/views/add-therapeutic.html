@@ -1,0 +1,23 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+
+    <p>Préparation:
+        <input type="checkbox" ng-model="preparation"/>
+    </p>
+    <p>Administration matin:
+        <input type="checkbox" ng-model="adMorning"/>
+    </p>
+    <p>Administration midi:
+        <input type="checkbox" ng-model="adMidday"/>
+    </p>
+    <p>Administration soir:
+        <input type="checkbox" ng-model="adEvening"/>
+    </p>
+    <p>Administration nuit:
+        <input type="checkbox" ng-model="adNight"/>
+    </p>
+
+    <button ng-click="ctrl.ajouterTherapeutic()" class="btn btn-primary" ui-sref="therapeutic">Valider</button>
+</div>

@@ -1,8 +1,9 @@
-var AddObservationCtrl = module.exports = function ($scope, ObservationService) {
+var AddTherapeuticCtrl = module.exports = function ($scope, TherapeuticService) {
     this.$scope = $scope;
-    this.ObservationService = ObservationService;
+    this.TherapeuticService = TherapeuticService;
     $scope.date = new Date();
-    $scope.comment = "";
+
+
 
     $scope.hstep = 1;
     $scope.mstep = 15;
@@ -26,6 +27,8 @@ var AddObservationCtrl = module.exports = function ($scope, ObservationService) 
     };
 };
 
-AddObservationCtrl.prototype.ajouterObservation = function() {
-    this.ObservationService.addObservation(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(), this.$scope.comment).then(function () {});
+AddTherapeuticCtrl.prototype.ajouterTherapeutic = function() {
+    this.TherapeuticService.addTherapeutic(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.preparation,
+    this.$scope.adMorning,this.$scope.adMidday,this.$scope.adEvening,this.$scope.adNight).then(function () {});
+
 };

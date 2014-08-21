@@ -1,15 +1,19 @@
-var ObservationService = module.exports = function (SERVER_ROOT, $http, $q) {
+var TherapeuticService = module.exports = function (SERVER_ROOT, $http, $q) {
     this.$http = $http;
     this.SERVER_ROOT = SERVER_ROOT;
     this.$q = $q;
 };
 
-ObservationService.prototype.addObservation = function (idBoarder, date, comment) {
+TherapeuticService.prototype.addTherapeutic = function (idBoarder, date, preparation, adMorning, adMidday, adEvening, adNight) {
     var _this = this;
     var data = "boarder=" + idBoarder +
         "&date=" + date +
-        "&comment=" + comment;
-    return this.$http.post(this.SERVER_ROOT + 'observation', data, {
+        "&preparation=" + preparation +
+        "&adMorning=" + adMorning +
+        "&adMidday=" + adMidday +
+        "&adEvening=" + adEvening +
+        "&adNight=" + adNight;
+    return this.$http.post(this.SERVER_ROOT + 'therapeutic', data, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Basic c2FtOnNhbQ=='
@@ -21,9 +25,9 @@ ObservationService.prototype.addObservation = function (idBoarder, date, comment
     });
 };
 
-ObservationService.prototype.getObservations = function () {
+TherapeuticService.prototype.getTherapeutics = function () {
     var _this = this;
-    return this.$http.get(this.SERVER_ROOT + 'observation/all', {
+    return this.$http.get(this.SERVER_ROOT + 'therapeutic/all', {
         headers: {
             'Authorization': 'Basic c2FtOnNhbQ=='
         }}).then(function (response) {

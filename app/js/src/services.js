@@ -10,5 +10,10 @@ moduleService.service("MealService", require('./services/MealService'));
 moduleService.service("SwaddleService", require('./services/SwaddleService'));
 moduleService.service("InsulinDosageService", require('./services/InsulinDosageService'));
 moduleService.service("ObservationService", require('./services/ObservationService'));
+moduleService.service("PatchService", require('./services/PatchService'));
+moduleService.service("AerosolService", require('./services/AerosolService'));
+moduleService.service("WoundService", require('./services/WoundService'));
+moduleService.service("DrugTreatmentService", require('./services/DrugTreatmentService'));
+moduleService.service("InsulinTakingService", require('./services/InsulinTakingService'));
+moduleService.service("TherapeuticService", require('./services/TherapeuticService'));
 
-//moduleService.service("InsulinTakingService", require('./services/InsulinTakingService'));

@@ -48,13 +48,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: 'views/swaddle.html',
             controller: 'SwaddleCtrl as ctrl'
+        }).state('addswaddle', {
+            url: "/swaddle/add",
+            parent: "main-content",
+            templateUrl: 'views/add-swaddle.html',
+            controller: 'AddSwaddleCtrl as ctrl'
         }).state('insulinDosage', {
-            url: "/insulin/insulinDosage",
+            url: "/insulinDosage",
             parent: "main-content",
             templateUrl: '../../views/insulinDosage.html',
             controller: 'InsulinDosageCtrl as ctrl'
         }).state('addinsulinDosage', {
-            url: "/insulin/add-insulinDosage",
+            url: "/insulinDosage/add",
             parent: "main-content",
             templateUrl: '../../views/add-insulinDosage.html',
             controller: 'AddInsulinDosageCtrl as ctrl'
@@ -64,10 +69,70 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: '../../views/observation.html',
             controller: 'ObservationCtrl as ctrl'
         }).state('addobservation', {
-            url: "/addobservation",
+            url: "/observation/add",
             parent: "main-content",
             templateUrl: '../../views/add-observation.html',
             controller: 'AddObservationCtrl as ctrl'
+        }).state('patch', {
+            url: "/patch",
+            parent: "main-content",
+            templateUrl: '../../views/patch.html',
+            controller: 'PatchCtrl as ctrl'
+        }).state('addpatch', {
+            url: "/patch/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-patch.html',
+            controller: 'AddPatchCtrl as ctrl'
+        }).state('aerosol', {
+            url: "/aerosol",
+            parent: "main-content",
+            templateUrl: '../../views/aerosol.html',
+            controller: 'AerosolCtrl as ctrl'
+        }).state('addaerosol', {
+            url: "/aerosol/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-aerosol.html',
+            controller: 'AddAerosolCtrl as ctrl'
+        }).state('wound', {
+            url: "/wound",
+            parent: "main-content",
+            templateUrl: '../../views/wound.html',
+            controller: 'WoundCtrl as ctrl'
+        }).state('addwound', {
+            url: "/wound/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-wound.html',
+            controller: 'AddWoundCtrl as ctrl'
+        }).state('drugTreatment', {
+            url: "/drugTreatment",
+            parent: "main-content",
+            templateUrl: '../../views/drugTreatment.html',
+            controller: 'DrugTreatmentCtrl as ctrl'
+        }).state('adddrugTreatment', {
+            url: "/drugTreatment/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-drugTreatment.html',
+            controller: 'AddDrugTreatmentCtrl as ctrl'
+        }).state('insulinTaking', {
+            url: "/insulinTaking",
+            parent: "main-content",
+            templateUrl: '../../views/insulinTaking.html',
+            controller: 'InsulinTakingCtrl as ctrl'
+        }).state('addinsulinTaking', {
+            url: "/insulinTaking/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-insulinTaking.html',
+            controller: 'AddInsulinTakingCtrl as ctrl'
+        }).state('therapeutic', {
+            url: "/therapeutic",
+            parent: "main-content",
+            templateUrl: '../../views/therapeutic.html',
+            controller: 'TherapeuticCtrl as ctrl'
+        }).state('addtherapeutic', {
+            url: "/therapeutic/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-therapeutic.html',
+            controller: 'AddTherapeuticCtrl as ctrl'
         })
 }).config(['$httpProvider', function ($httpProvider) {
     // Autorisation des cookies pour les requétes CORS

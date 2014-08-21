@@ -1,8 +1,10 @@
-var AddObservationCtrl = module.exports = function ($scope, ObservationService) {
+var AddWoundCtrl = module.exports = function ($scope, WoundService) {
     this.$scope = $scope;
-    this.ObservationService = ObservationService;
+    this.WoundService = WoundService;
     $scope.date = new Date();
-    $scope.comment = "";
+    $scope.localisation = "";
+    $scope.type = "";
+    $scope.description = "";
 
     $scope.hstep = 1;
     $scope.mstep = 15;
@@ -26,6 +28,7 @@ var AddObservationCtrl = module.exports = function ($scope, ObservationService) 
     };
 };
 
-AddObservationCtrl.prototype.ajouterObservation = function() {
-    this.ObservationService.addObservation(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(), this.$scope.comment).then(function () {});
+AddWoundCtrl.prototype.ajouterWound = function() {
+    this.WoundService.addWound(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.localisation,this.$scope.type,this.$scope.description).then(function () {});
+
 };

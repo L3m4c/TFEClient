@@ -1,15 +1,16 @@
-var ObservationService = module.exports = function (SERVER_ROOT, $http, $q) {
+var InsulinTakingService = module.exports = function (SERVER_ROOT, $http, $q) {
     this.$http = $http;
     this.SERVER_ROOT = SERVER_ROOT;
     this.$q = $q;
 };
 
-ObservationService.prototype.addObservation = function (idBoarder, date, comment) {
+InsulinTakingService.prototype.addInsulinTaking = function (idBoarder, date, glycemia) {
     var _this = this;
     var data = "boarder=" + idBoarder +
         "&date=" + date +
-        "&comment=" + comment;
-    return this.$http.post(this.SERVER_ROOT + 'observation', data, {
+        "&glycemia=" + glycemia;
+
+    return this.$http.post(this.SERVER_ROOT + 'insulinTaking', data, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Basic c2FtOnNhbQ=='
@@ -21,9 +22,9 @@ ObservationService.prototype.addObservation = function (idBoarder, date, comment
     });
 };
 
-ObservationService.prototype.getObservations = function () {
+InsulinTakingService.prototype.getInsulinTakings = function () {
     var _this = this;
-    return this.$http.get(this.SERVER_ROOT + 'observation/all', {
+    return this.$http.get(this.SERVER_ROOT + 'insulinTaking/all', {
         headers: {
             'Authorization': 'Basic c2FtOnNhbQ=='
         }}).then(function (response) {

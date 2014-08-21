@@ -4,11 +4,11 @@ var SwaddleService = module.exports = function (SERVER_ROOT, $http, $q) {
     this.$q = $q;
 };
 
-MealService.prototype.addMeal = function (idBoarder, date) {
+SwaddleService.prototype.addSwaddle = function (idBoarder, date) {
     var _this = this;
     var data = "boarder=" + idBoarder +
         "&date=" + date;
-    return this.$http.post(this.SERVER_ROOT + 'meal', data, {
+    return this.$http.post(this.SERVER_ROOT + 'swaddle', data, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Basic c2FtOnNhbQ=='
@@ -20,9 +20,9 @@ MealService.prototype.addMeal = function (idBoarder, date) {
     });
 };
 
-MealService.prototype.getMeals = function () {
+SwaddleService.prototype.getSwaddles = function () {
     var _this = this;
-    return this.$http.get(this.SERVER_ROOT + 'meal/all', {
+    return this.$http.get(this.SERVER_ROOT + 'swaddle/all', {
         headers: {
             'Authorization': 'Basic c2FtOnNhbQ=='
         }}).then(function (response) {
