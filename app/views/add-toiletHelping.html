@@ -1,0 +1,12 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <h3>Aide pour aller aux toilettes</h3>
+    <p>Se déplacer / s'habiller / s'essuyer:
+        <input type="checkbox" ng-model="move"/>
+    </p>
+
+
+    <button ng-click="ctrl.ajouterToiletHelping()" class="btn btn-primary" ui-sref="toiletHelping">Valider</button>
+</div>

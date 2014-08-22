@@ -11,5 +11,6 @@ var MenuCtrl = module.exports = function ($scope) {
     $scope.permission.drugTreatment = true;
     $scope.permission.insulinTaking = true;
     $scope.permission.therapeutic = true;
+    $scope.permission.injection = true;
 
 }

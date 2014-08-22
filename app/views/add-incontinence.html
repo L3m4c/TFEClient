@@ -1,0 +1,18 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <h3>Incontinence</h3>
+    <p>Diurne:
+        <input type="checkbox" ng-model="diurnal"/>
+    </p>
+    <p>Nocturne:
+        <input type="checkbox" ng-model="nocturnal"/>
+    </p>
+    <p>Diurne et nocturne:
+        <input type="checkbox" ng-model="both"/>
+    </p>
+
+
+    <button ng-click="ctrl.ajouterIncontinence()" class="btn btn-primary" ui-sref="incontinence">Valider</button>
+</div>

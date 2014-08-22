@@ -1,0 +1,19 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <h3>Manger / alimentation</h3>
+    <p>Aide préalable (couper / beurrer):
+        <input type="checkbox" ng-model="priorAid"/>
+    </p>
+    <p>Aide partille / complete en continu:
+        <input type="checkbox" ng-model="fullAid"/>
+    </p>
+    <p>Stimulé et surveillé en continu:
+        <input type="checkbox" ng-model="stimulated"/>
+    </p>
+    <p>Hydratation et régime éventuel:
+        <input type="checkbox" ng-model="hydration"/>
+    </p>
+    <button ng-click="ctrl.ajouterEat()" class="btn btn-primary" ui-sref="eat">Valider</button>
+</div>

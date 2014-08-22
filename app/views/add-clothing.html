@@ -1,0 +1,14 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <h3>Habillement / désahbillement</h3>
+    <p>Partiel / complet dessus & dessous:
+        <input type="checkbox" ng-model="clothingComplete"/>
+    </p>
+    <p>Stimulé & surveillé en continu:
+        <input type="checkbox" ng-model="stimulated"/>
+    </p>
+
+    <button ng-click="ctrl.ajouterClothing()" class="btn btn-primary" ui-sref="clothing">Valider</button>
+</div>

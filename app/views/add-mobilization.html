@@ -1,0 +1,18 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <h3>Mobilisation / déplacement</h3>
+    <p>Aide lever / coucher / assise:
+        <input type="checkbox" ng-model="help"/>
+    </p>
+    <p>Matériel de contention:
+        <input type="checkbox" ng-model="material"/>
+    </p>
+    <p>Cannes / tribune / chaise roulante:
+        <input type="checkbox" ng-model="cane"/>
+    </p>
+
+
+    <button ng-click="ctrl.ajouterMobilization()" class="btn btn-primary" ui-sref="mobilization">Valider</button>
+</div>

@@ -133,6 +133,96 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-therapeutic.html',
             controller: 'AddTherapeuticCtrl as ctrl'
+        }).state('injection', {
+            url: "/injection",
+            parent: "main-content",
+            templateUrl: '../../views/injection.html',
+            controller: 'InjectionCtrl as ctrl'
+        }).state('addinjection', {
+            url: "/injection/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-injection.html',
+            controller: 'AddInjectionCtrl as ctrl'
+        }).state('hygiene', {
+                url: "/hygiene",
+                parent: "main-content",
+                templateUrl: '../../views/hygiene.html',
+                controller: 'HygieneCtrl as ctrl'
+        }).state('addhygiene', {
+                url: "/hygiene/add",
+                parent: "main-content",
+                templateUrl: '../../views/add-hygiene.html',
+                controller: 'AddHygieneCtrl as ctrl'
+        }).state('clothing', {
+            url: "/clothing",
+            parent: "main-content",
+            templateUrl: '../../views/clothing.html',
+            controller: 'ClothingCtrl as ctrl'
+        }).state('addclothing', {
+            url: "/clothing/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-clothing.html',
+            controller: 'AddClothingCtrl as ctrl'
+        }).state('mobilization', {
+            url: "/mobilization",
+            parent: "main-content",
+            templateUrl: '../../views/mobilization.html',
+            controller: 'MobilizationCtrl as ctrl'
+        }).state('addmobilization', {
+            url: "/mobilization/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-mobilization.html',
+            controller: 'AddMobilizationCtrl as ctrl'
+        }).state('toiletHelping', {
+            url: "/toiletHelping",
+            parent: "main-content",
+            templateUrl: '../../views/toiletHelping.html',
+            controller: 'ToiletHelpingCtrl as ctrl'
+        }).state('addtoiletHelping', {
+            url: "/toiletHelping/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-toiletHelping.html',
+            controller: 'AddToiletHelpingCtrl as ctrl'
+        }).state('incontinence', {
+            url: "/incontinence",
+            parent: "main-content",
+            templateUrl: '../../views/incontinence.html',
+            controller: 'IncontinenceCtrl as ctrl'
+        }).state('addincontinence', {
+            url: "/incontinence/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-incontinence.html',
+            controller: 'AddIncontinenceCtrl as ctrl'
+        }).state('eat', {
+            url: "/eat",
+            parent: "main-content",
+            templateUrl: '../../views/eat.html',
+            controller: 'EatCtrl as ctrl'
+        }).state('addeat', {
+            url: "/eat/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-eat.html',
+            controller: 'AddEatCtrl as ctrl'
+        }).state('parameter', {
+            url: "/parameter",
+            parent: "main-content",
+            templateUrl: '../../views/parameter.html',
+            controller: 'ParameterCtrl as ctrl'
+        }).state('addparameter', {
+            url: "/parameter/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-parameter.html',
+            controller: 'AddParameterCtrl as ctrl'
+        }).state('disorder', {
+            url: "/disorder",
+            parent: "main-content",
+            templateUrl: '../../views/disorder.html',
+            controller: 'DisorderCtrl as ctrl'
+        }).state('adddisorder', {
+            url: "/disorder/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-disorder.html',
+            controller: 'AddDisorderCtrl as ctrl'
         })
 }).config(['$httpProvider', function ($httpProvider) {
     // Autorisation des cookies pour les requétes CORS

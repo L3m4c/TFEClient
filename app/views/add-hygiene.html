@@ -1,0 +1,20 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <h3>Hygiène et toilette</h3>
+    <p>Toilette partielle dessus ou dessous:
+        <input type="checkbox" ng-model="toiletPartiel"/>
+    </p>
+    <p>Partiel/Complete dessus & dessous:
+        <input type="checkbox" ng-model="toiletComplete"/>
+    </p>
+    <p>Stimulé & surveillé en continu:
+        <input type="checkbox" ng-model="stimulated"/>
+    </p>
+    <p>Bain / douche:
+        <input type="checkbox" ng-model="bath"/>
+    </p>
+
+    <button ng-click="ctrl.ajouterHygiene()" class="btn btn-primary" ui-sref="hygiene">Valider</button>
+</div>

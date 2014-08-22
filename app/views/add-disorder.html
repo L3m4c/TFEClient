@@ -1,0 +1,26 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+   <h3>Troubles du comportement</h3>
+
+    <p>Désorientation temps:
+        <input type="checkbox" ng-model="timeDisorientation"/>
+    </p>
+    <p>Désorientation espace:
+        <input type="checkbox" ng-model="spaceDisorientation"/>
+    </p>
+    <p>Difficulté d'expression:
+        <input type="checkbox" ng-model="termDifficulty"/>
+    </p>
+    <p>Dérangement verbal:
+        <input type="checkbox" ng-model="verbalDifficulty"/>
+    </p>
+    <p>Perte notions bienséance:
+        <input type="checkbox" ng-model="lossConcept"/>
+    </p>
+    <p>Agité / destructeur / nocturne:
+        <input type="checkbox" ng-model="agitated"/>
+    </p>
+    <button ng-click="ctrl.ajouterDisorder()" class="btn btn-primary" ui-sref="disorder">Valider</button>
+</div>

@@ -16,4 +16,14 @@ moduleService.service("WoundService", require('./services/WoundService'));
 moduleService.service("DrugTreatmentService", require('./services/DrugTreatmentService'));
 moduleService.service("InsulinTakingService", require('./services/InsulinTakingService'));
 moduleService.service("TherapeuticService", require('./services/TherapeuticService'));
+moduleService.service("InjectionService", require('./services/InjectionService'));
+moduleService.service("HygieneService", require('./services/HygieneService'));
+moduleService.service("ClothingService", require('./services/ClothingService'));
+moduleService.service("MobilizationService", require('./services/MobilizationService'));
+moduleService.service("ToiletHelpingService", require('./services/ToiletHelpingService'));
+moduleService.service("IncontinenceService", require('./services/IncontinenceService'));
+moduleService.service("EatService", require('./services/EatService'));
+moduleService.service("ParameterService", require('./services/ParameterService'));
+moduleService.service("DisorderService", require('./services/DisorderService'));
+
 

@@ -2,7 +2,11 @@ var AddTherapeuticCtrl = module.exports = function ($scope, TherapeuticService) 
     this.$scope = $scope;
     this.TherapeuticService = TherapeuticService;
     $scope.date = new Date();
-
+    $scope.preparation = false;
+    $scope.adMorning = false;
+    $scope.adMidday = false;
+    $scope.adEvening = false;
+    $scope.adNight = false;
 
 
     $scope.hstep = 1;

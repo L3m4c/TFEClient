@@ -26,6 +26,21 @@ moduleController.controller("InsulinTakingCtrl", require('./controllers/InsulinT
 moduleController.controller("AddInsulinTakingCtrl", require('./controllers/AddInsulinTakingCtrl'));
 moduleController.controller("TherapeuticCtrl", require('./controllers/TherapeuticCtrl'));
 moduleController.controller("AddTherapeuticCtrl", require('./controllers/AddTherapeuticCtrl'));
-
-//moduleController.controller("InsulinTakingCtrl", require('./controllers/InsulinTakingCtrl'));
-//moduleController.controller("AddInsulinTakingCtrl", require('./controllers/AddInsulinTakingCtrl'));
+moduleController.controller("InjectionCtrl", require('./controllers/InjectionCtrl'));
+moduleController.controller("AddInjectionCtrl", require('./controllers/AddInjectionCtrl'));
+moduleController.controller("HygieneCtrl", require('./controllers/HygieneCtrl'));
+moduleController.controller("AddHygieneCtrl", require('./controllers/AddHygieneCtrl'));
+moduleController.controller("ClothingCtrl", require('./controllers/ClothingCtrl'));
+moduleController.controller("AddClothingCtrl", require('./controllers/AddClothingCtrl'));
+moduleController.controller("MobilizationCtrl", require('./controllers/MobilizationCtrl'));
+moduleController.controller("AddMobilizationCtrl", require('./controllers/AddMobilizationCtrl'));
+moduleController.controller("ToiletHelpingCtrl", require('./controllers/ToiletHelpingCtrl'));
+moduleController.controller("AddToiletHelpingCtrl", require('./controllers/AddToiletHelpingCtrl'));
+moduleController.controller("IncontinenceCtrl", require('./controllers/IncontinenceCtrl'));
+moduleController.controller("AddIncontinenceCtrl", require('./controllers/AddIncontinenceCtrl'));
+moduleController.controller("EatCtrl", require('./controllers/EatCtrl'));
+moduleController.controller("AddEatCtrl", require('./controllers/AddEatCtrl'));
+moduleController.controller("ParameterCtrl", require('./controllers/ParameterCtrl'));
+moduleController.controller("AddParameterCtrl", require('./controllers/AddParameterCtrl'));
+moduleController.controller("DisorderCtrl", require('./controllers/DisorderCtrl'));
+moduleController.controller("AddDisorderCtrl", require('./controllers/AddDisorderCtrl'));
