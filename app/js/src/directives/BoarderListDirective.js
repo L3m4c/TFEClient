@@ -8,7 +8,6 @@ var BoarderListDirective = module.exports =  function(BoarderService) {
         controller: "BoarderCtrl",
         templateUrl: 'views/directives/boarderlist.html',
         link: function (scope) {
-            console.log(scope);
         }
     };
 };

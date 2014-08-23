@@ -31,3 +31,34 @@ MealService.prototype.getMeals = function () {
 
     });
 };
+
+MealService.prototype.removeMeal = function (idMeal) {
+    var _this = this;
+    return this.$http.delete(this.SERVER_ROOT + 'meal?id=' + idMeal, {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Basic c2FtOnNhbQ=='
+        }
+    }).then(function (data) {
+
+    }).catch(function (data) {
+
+    });
+};
+
+MealService.prototype.removeMeals = function (meals) {
+    var _this = this;
+    var deferGlobal = this.$q.defer();
+    var promises = [];
+    meals.forEach(function (meal) {
+        var defer = _this.$q.defer();
+        _this.removeMeal(meal.id).then(function () {
+            defer.resolve();
+        });
+        promises.push(defer.promise);
+    });
+    this.$q.all(promises).then(function () {
+        deferGlobal.resolve();
+    });
+    return deferGlobal.promise;
+}

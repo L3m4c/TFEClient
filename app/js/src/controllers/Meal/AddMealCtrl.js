@@ -1,7 +1,9 @@
-var AddMealCtrl = module.exports = function ($scope, MealService) {
+var AddMealCtrl = module.exports = function ($scope, $state, MealService) {
     this.$scope = $scope;
     this.MealService = MealService;
+    this.$state = $state;
     $scope.date = new Date();
+    $scope.selectedMeals = [];
 
     $scope.hstep = 1;
     $scope.mstep = 15;
@@ -26,5 +28,10 @@ var AddMealCtrl = module.exports = function ($scope, MealService) {
 };
 
 AddMealCtrl.prototype.ajouterMeal = function() {
-    this.MealService.addMeal(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime()).then(function () {});
+    var _this = this;
+    if (this.$scope.selectedMeals.length !== 0) {
+        this.MealService.addMeal(this.$scope.selectedMeals[0].id, this.$scope.date.getTime()).then(function () {
+            _this.$state.go('meal');
+        });
+    }
 };

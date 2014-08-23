@@ -1,3 +1,4 @@
 <h1>Liste des repas</h1>
 <div class="gridStyle" ng-grid="gridOptions"></div>
 <button ui-sref="addmeal" class="btn btn-primary">Ajouter un repas</button>
+<button ng-class="{disabled: selectedMeals.length == 0}" ng-click="removeSelectedMeals()" class="btn btn-primary">Supprimer</button>

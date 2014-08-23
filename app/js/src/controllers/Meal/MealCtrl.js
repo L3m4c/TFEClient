@@ -1,6 +1,6 @@
-var MealCtrl = module.exports = function ($scope, MealService) {
+var MealCtrl = module.exports = function ($scope, $state, MealService) {
     $scope = $scope;
-
+    $scope.selectedMeals = [];
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -21,9 +21,9 @@ var MealCtrl = module.exports = function ($scope, MealService) {
         showFooter: false,
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
-        multiSelect: false,
+        multiSelect: true,
         afterSelectionChange: function(row, event) {
-            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+            $scope.selectedMeals = angular.copy(row.config.selectedItems);
         },
         showGroupPanel: true
     };
@@ -34,4 +34,10 @@ var MealCtrl = module.exports = function ($scope, MealService) {
             return meal;
         });
     });
+
+    $scope.removeSelectedMeals = function () {
+        MealService.removeMeals($scope.selectedMeals).then(function () {
+            $state.go('reload', {reload:'meal'});
+        });
+    }
 };

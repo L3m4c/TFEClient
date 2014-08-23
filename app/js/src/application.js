@@ -14,6 +14,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     controller: 'LoginCtrl as ctrl'
                 }
             }
+        }).state('reload', {
+            url: "/reload/:reload",
+            controller: function ($stateParams, $state, $timeout) {},
+            onEnter: function ($stateParams, $state, $timeout) {
+                $timeout(function () {
+                    $state.go($stateParams.reload);
+                }, 1);
+            }
         }).state('main-content', {
             abstract: true,
             views: {
