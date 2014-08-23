@@ -5,7 +5,8 @@ var AddHygieneCtrl = module.exports = function ($scope, HygieneService) {
 
     $scope.toiletPartiel = false;
     $scope.toiletComplete = false;
-    $scope.stimulated = false;
+    $scope.hygieneStimulated = false;
+
     $scope.bath = false;
     $scope.hstep = 1;
     $scope.mstep = 15;
@@ -30,7 +31,7 @@ var AddHygieneCtrl = module.exports = function ($scope, HygieneService) {
 };
 
 AddHygieneCtrl.prototype.ajouterHygiene = function() {
-    this.HygieneService.addHygiene(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.toiletPartiel,this.$scope.toiletComplete,this.$scope.stimulated,this.$scope.bath).then(function () {});
+    this.HygieneService.addHygiene(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.toiletPartiel,this.$scope.toiletComplete,this.$scope.hygieneStimulated,this.$scope.bath).then(function () {});
 
 
 };

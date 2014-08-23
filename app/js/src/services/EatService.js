@@ -4,13 +4,13 @@ var EatService = module.exports = function (SERVER_ROOT, $http, $q) {
     this.$q = $q;
 };
 
-EatService.prototype.addEat = function (idBoarder, date, priorAid, fullAid, stimulated, hydration) {
+EatService.prototype.addEat = function (idBoarder, date, priorAid, fullAid, eatStimulated, hydration) {
     var _this = this;
     var data = "boarder=" + idBoarder +
         "&date=" + date +
         "&priorAid=" + priorAid +
         "&fullAid=" + fullAid +
-        "&stimulated=" + stimulated +
+        "&eatStimulated=" + eatStimulated +
         "&hydration=" + hydration ;
     return this.$http.post(this.SERVER_ROOT + 'eat', data, {
         headers: {

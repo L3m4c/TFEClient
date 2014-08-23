@@ -44,3 +44,4 @@ moduleController.controller("ParameterCtrl", require('./controllers/ParameterCtr
 moduleController.controller("AddParameterCtrl", require('./controllers/AddParameterCtrl'));
 moduleController.controller("DisorderCtrl", require('./controllers/DisorderCtrl'));
 moduleController.controller("AddDisorderCtrl", require('./controllers/AddDisorderCtrl'));
+

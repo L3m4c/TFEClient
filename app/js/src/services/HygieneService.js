@@ -4,13 +4,13 @@ var HygieneService = module.exports = function (SERVER_ROOT, $http, $q) {
     this.$q = $q;
 };
 
-HygieneService.prototype.addHygiene = function (idBoarder, date, toiletPartiel, toiletComplete, stimulated, bath) {
+HygieneService.prototype.addHygiene = function (idBoarder, date, toiletPartiel, toiletComplete, hygieneStimulated, bath) {
     var _this = this;
     var data = "boarder=" + idBoarder +
         "&date=" + date +
         "&toiletPartiel=" + toiletPartiel +
         "&toiletComplete=" + toiletComplete +
-        "&stimulated=" + stimulated +
+        "&hygieneStimulated=" + hygieneStimulated +
         "&bath=" + bath ;
     return this.$http.post(this.SERVER_ROOT + 'hygiene', data, {
         headers: {

@@ -5,7 +5,7 @@ var AddEatCtrl = module.exports = function ($scope, EatService) {
 
     $scope.priorAid = false;
     $scope.fullAid = false;
-    $scope.stimulated = false;
+    $scope.eatStimulated = false;
     $scope.hydration = false;
 
     $scope.hstep = 1;
@@ -31,7 +31,7 @@ var AddEatCtrl = module.exports = function ($scope, EatService) {
 };
 
 AddEatCtrl.prototype.ajouterEat = function() {
-    this.EatService.addEat(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.priorAid,this.$scope.fullAid,this.$scope.stimulated,this.$scope.hydration).then(function () {});
+    this.EatService.addEat(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.priorAid,this.$scope.fullAid,this.$scope.eatStimulated,this.$scope.hydration).then(function () {});
 
 
 };

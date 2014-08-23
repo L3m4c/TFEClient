@@ -4,7 +4,7 @@ var AddClothingCtrl = module.exports = function ($scope, ClothingService) {
     $scope.date = new Date();
 
     $scope.clothingComplete = false;
-    $scope.stimulated = false;
+    $scope.clothingStimulated = false;
 
     $scope.hstep = 1;
     $scope.mstep = 15;
@@ -29,7 +29,7 @@ var AddClothingCtrl = module.exports = function ($scope, ClothingService) {
 };
 
 AddClothingCtrl.prototype.ajouterClothing = function() {
-    this.ClothingService.addClothing(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.clothingComplete,this.$scope.stimulated).then(function () {});
+    this.ClothingService.addClothing(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.clothingComplete,this.$scope.clothingStimulated).then(function () {});
 
 
 };
