@@ -231,6 +231,36 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-disorder.html',
             controller: 'AddDisorderCtrl as ctrl'
+        }).state('aspect', {
+            url: "/aspect",
+            parent: "main-content",
+            templateUrl: '../../views/aspect.html',
+            controller: 'AspectCtrl as ctrl'
+        }).state('addaspect', {
+            url: "/aspect/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-aspect.html',
+            controller: 'AddAspectCtrl as ctrl'
+        }).state('measure', {
+            url: "/measure",
+            parent: "main-content",
+            templateUrl: '../../views/measure.html',
+            controller: 'MeasureCtrl as ctrl'
+        }).state('addmeasure', {
+            url: "/measure/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-measure.html',
+            controller: 'AddMeasureCtrl as ctrl'
+        }).state('embankment', {
+            url: "/embankment",
+            parent: "main-content",
+            templateUrl: '../../views/embankment.html',
+            controller: 'EmbankmentCtrl as ctrl'
+        }).state('addembankment', {
+            url: "/embankment/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-embankment.html',
+            controller: 'AddEmbankmentCtrl as ctrl'
         })
 }).config(['$httpProvider', function ($httpProvider) {
     // Autorisation des cookies pour les requétes CORS

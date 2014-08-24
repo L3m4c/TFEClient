@@ -25,5 +25,8 @@ moduleService.service("IncontinenceService", require('./services/IncontinenceSer
 moduleService.service("EatService", require('./services/EatService'));
 moduleService.service("ParameterService", require('./services/ParameterService'));
 moduleService.service("DisorderService", require('./services/DisorderService'));
+moduleService.service("AspectService", require('./services/AspectService'));
+moduleService.service("MeasureService", require('./services/MeasureService'));
+moduleService.service("EmbankmentService", require('./services/EmbankmentService'));
 
 
