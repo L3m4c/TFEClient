@@ -32,7 +32,4 @@ var AddAerosolCtrl = module.exports = function ($scope, AerosolService) {
 
 AddAerosolCtrl.prototype.ajouterAerosol = function() {
     this.AerosolService.addAerosol(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.doctor,this.$scope.nameMedic,this.$scope.dosage,this.$scope.unit).then(function () {});
-    // this.$scope.dateStart.getTime(),
-    // this.$scope.dateEnd.getTime()
-
 };

@@ -18,6 +18,7 @@ moduleController.controller("PatchCtrl", require('./controllers/PatchCtrl'));
 moduleController.controller("AddPatchCtrl", require('./controllers/AddPatchCtrl'));
 moduleController.controller("AerosolCtrl", require('./controllers/Aerosol/AerosolCtrl'));
 moduleController.controller("AddAerosolCtrl", require('./controllers/Aerosol/AddAerosolCtrl'));
+moduleController.controller("UpdateAerosolCtrl", require('./controllers/Aerosol/UpdateAerosolCtrl'));
 moduleController.controller("WoundCtrl", require('./controllers/WoundCtrl'));
 moduleController.controller("AddWoundCtrl", require('./controllers/AddWoundCtrl'));
 moduleController.controller("DrugTreatmentCtrl", require('./controllers/DrugTreatement/DrugTreatmentCtrl'));

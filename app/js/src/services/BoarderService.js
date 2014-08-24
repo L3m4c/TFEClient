@@ -15,3 +15,15 @@ BoarderService.prototype.getBoarders = function () {
 
     });
 };
+
+BoarderService.prototype.getBoarder = function (id) {
+    var _this = this;
+    return this.$http.get(this.SERVER_ROOT + 'boarder?id=' + id, {
+        headers: {
+            'Authorization': 'Basic c2FtOnNhbQ=='
+        }}).then(function (response) {
+        return response.data;
+    }).catch(function (response) {
+
+    });
+};

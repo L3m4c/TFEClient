@@ -37,3 +37,30 @@ AerosolService.prototype.getAerosols = function () {
 
     });
 };
+
+AerosolService.prototype.getAerosol = function (id) {
+    var _this = this;
+    return this.$http.get(this.SERVER_ROOT + 'aerosol?id=' + id, {
+        headers: {
+            'Authorization': 'Basic c2FtOnNhbQ=='
+        }}).then(function (response) {
+        return response.data;
+    }).catch(function (response) {
+
+    });
+};
+
+
+AerosolService.prototype.updateAerosol = function (id, idBoarder, date, dateStart, dateEnd, doctor, nameMedic, dosage, unit) {
+    var _this = this;
+    var data = 'id=' + id + '&boarder=' + idBoarder + '&date=' + date.getTime() + '&dateStart=' + dateStart;
+    data += '&dateEnd=' + dateEnd + '&doctor=' + doctor + '&nameMedic=' + nameMedic + '&dosage=' + dosage + '&unit=' + unit;
+    return this.$http.put(this.SERVER_ROOT + 'aerosol?' + data, {
+        headers: {
+            'Authorization': 'Basic c2FtOnNhbQ=='
+        }}).then(function (response) {
+        return response.data;
+    }).catch(function (response) {
+
+    });
+};
