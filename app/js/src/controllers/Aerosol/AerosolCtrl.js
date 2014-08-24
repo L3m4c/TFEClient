@@ -1,5 +1,6 @@
 var AerosolCtrl = module.exports = function ($scope, AerosolService) {
     $scope = $scope;
+    $scope.selectedAerosols = [];
 
 
     $scope.gridOptions = {
@@ -23,7 +24,7 @@ var AerosolCtrl = module.exports = function ($scope, AerosolService) {
         enableCellSelection: false,
         multiSelect: false,
         afterSelectionChange: function(row, event) {
-            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+            $scope.selectedAerosols = angular.copy(row.config.selectedItems);
         },
         showGroupPanel: true
     };
