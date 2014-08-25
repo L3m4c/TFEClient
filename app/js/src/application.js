@@ -101,6 +101,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-aerosol.html',
             controller: 'AddAerosolCtrl as ctrl'
+        }).state('updateaerosol', {
+            url: "/aerosol/update/:id",
+            parent: "main-content",
+            templateUrl: '../../views/add-aerosol.html',
+            controller: 'UpdateAerosolCtrl as ctrl'
         }).state('wound', {
             url: "/wound",
             parent: "main-content",

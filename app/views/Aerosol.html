@@ -1,3 +1,4 @@
 <h1>Liste des aerosols</h1>
 <div class="gridStyle" ng-grid="gridOptions"></div>
 <button ui-sref="addaerosol" class="btn btn-primary">Ajouter un aerosol</button>
+<button ng-class="{disabled: selectedAerosols.length == 0}" ui-sref="updateaerosol({id:selectedAerosols[0].id})" class="btn btn-primary">Mettre à jour</button>
