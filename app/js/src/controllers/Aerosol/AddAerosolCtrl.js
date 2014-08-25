@@ -1,5 +1,6 @@
-var AddAerosolCtrl = module.exports = function ($scope, AerosolService) {
+var AddAerosolCtrl = module.exports = function ($scope, $state, AerosolService) {
     this.$scope = $scope;
+    this.$state = $state;
     this.AerosolService = AerosolService;
     $scope.date = new Date();
     //$scope.dateStart = new Date();
@@ -31,5 +32,8 @@ var AddAerosolCtrl = module.exports = function ($scope, AerosolService) {
 };
 
 AddAerosolCtrl.prototype.ajouterAerosol = function() {
-    this.AerosolService.addAerosol(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.doctor,this.$scope.nameMedic,this.$scope.dosage,this.$scope.unit).then(function () {});
+    _this = this;
+    this.AerosolService.addAerosol(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.doctor,this.$scope.nameMedic,this.$scope.dosage,this.$scope.unit).then(function () {
+        _this.$state.go('aerosol');
+    });
 };

@@ -51,10 +51,10 @@ AerosolService.prototype.getAerosol = function (id) {
 };
 
 
-AerosolService.prototype.updateAerosol = function (id, idBoarder, date, dateStart, dateEnd, doctor, nameMedic, dosage, unit) {
+AerosolService.prototype.updateAerosol = function (id, idBoarder, date, doctor, nameMedic, dosage, unit) {
     var _this = this;
-    var data = 'id=' + id + '&boarder=' + idBoarder + '&date=' + date.getTime() + '&dateStart=' + dateStart;
-    data += '&dateEnd=' + dateEnd + '&doctor=' + doctor + '&nameMedic=' + nameMedic + '&dosage=' + dosage + '&unit=' + unit;
+    var data = 'id=' + id + '&boarder=' + idBoarder + '&date=' + date.getTime();
+    data += '&doctor=' + doctor + '&nameMedic=' + nameMedic + '&dosage=' + dosage + '&unit=' + unit;
     return this.$http.put(this.SERVER_ROOT + 'aerosol?' + data, {
         headers: {
             'Authorization': 'Basic c2FtOnNhbQ=='
