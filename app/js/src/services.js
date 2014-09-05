@@ -28,5 +28,7 @@ moduleService.service("DisorderService", require('./services/DisorderService'));
 moduleService.service("AspectService", require('./services/AspectService'));
 moduleService.service("MeasureService", require('./services/MeasureService'));
 moduleService.service("EmbankmentService", require('./services/EmbankmentService'));
-
+moduleService.service("SurroundingSkinService", require('./services/SurroundingSkinService'));
+moduleService.service("TreatmentService", require('./services/TreatmentService'));
+moduleService.service("BandageService", require('./services/BandageService'));
 

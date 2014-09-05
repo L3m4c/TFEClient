@@ -45,4 +45,9 @@ moduleController.controller("ParameterCtrl", require('./controllers/ParameterCtr
 moduleController.controller("AddParameterCtrl", require('./controllers/AddParameterCtrl'));
 moduleController.controller("DisorderCtrl", require('./controllers/Disorder/DisorderCtrl'));
 moduleController.controller("AddDisorderCtrl", require('./controllers/Disorder/AddDisorderCtrl'));
-
+moduleController.controller("SurroundingSkinCtrl", require('./controllers/SurroundingSkin/SurroundingSkinCtrl'));
+moduleController.controller("AddSurroundingSkinCtrl", require('./controllers/SurroundingSkin/AddSurroundingSkinCtrl'));
+moduleController.controller("TreatmentCtrl", require('./controllers/Treatment/TreatmentCtrl'));
+moduleController.controller("AddTreatmentCtrl", require('./controllers/Treatment/AddTreatmentCtrl'));
+moduleController.controller("BandageCtrl", require('./controllers/Bandage/BandageCtrl'));
+moduleController.controller("AddBandageCtrl", require('./controllers/Bandage/AddBandageCtrl'));

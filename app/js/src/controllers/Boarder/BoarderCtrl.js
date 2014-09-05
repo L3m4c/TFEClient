@@ -15,6 +15,14 @@ var BoarderCtrl = module.exports = function ($scope, BoarderService) {
             {
                 field : 'room',
                 displayName : 'Chambre'
+            },
+            {
+                field : 'age',
+                displayName : 'Age'
+            },
+            {
+                field : 'phone',
+                displayName : 'Téléphone'
             }],
         showFooter: false,
         totalServerItems: 'totalServerItems',
@@ -28,5 +36,6 @@ var BoarderCtrl = module.exports = function ($scope, BoarderService) {
 
     BoarderService.getBoarders().then(function (data) {
         $scope.data = data;
+
     });
 };

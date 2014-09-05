@@ -3,6 +3,7 @@ var AddAerosolCtrl = module.exports = function ($scope, $state, AerosolService) 
     this.$state = $state;
     this.AerosolService = AerosolService;
     $scope.date = new Date();
+
     //$scope.dateStart = new Date();
     //$scope.dateEnd = new Date();
     $scope.doctor = "";

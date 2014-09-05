@@ -2,7 +2,7 @@ var InsulinDosageCtrl = module.exports = function ($scope, InsulinDosageService)
     this.$scope = $scope;
     this.InsulinDosageService = InsulinDosageService;
     $scope.date = new Date();
-
+    $scope.dosage = 0;
     $scope.hstep = 1;
     $scope.mstep = 15;
 

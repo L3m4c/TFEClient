@@ -266,6 +266,36 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-embankment.html',
             controller: 'AddEmbankmentCtrl as ctrl'
+        }).state('surroundingSkin', {
+            url: "/surroundingSkin",
+            parent: "main-content",
+            templateUrl: '../../views/surroundingSkin.html',
+            controller: 'SurroundingSkinCtrl as ctrl'
+        }).state('addsurroundingSkin', {
+            url: "/surroundingSkin/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-surroundingSkin.html',
+            controller: 'AddSurroundingSkinCtrl as ctrl'
+        }).state('treatment', {
+            url: "/treatment",
+            parent: "main-content",
+            templateUrl: '../../views/treatment.html',
+            controller: 'TreatmentCtrl as ctrl'
+        }).state('addtreatment', {
+            url: "/treatment/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-treatment.html',
+            controller: 'AddTreatmentCtrl as ctrl'
+        }).state('bandage', {
+            url: "/bandage",
+            parent: "main-content",
+            templateUrl: '../../views/bandage.html',
+            controller: 'BandageCtrl as ctrl'
+        }).state('addbandage', {
+            url: "/bandage/add",
+            parent: "main-content",
+            templateUrl: '../../views/add-bandage.html',
+            controller: 'AddBandageCtrl as ctrl'
         })
 }).config(['$httpProvider', function ($httpProvider) {
     // Autorisation des cookies pour les requétes CORS
