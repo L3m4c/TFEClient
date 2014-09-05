@@ -1,3 +1,5 @@
 <h1>Liste des patchs</h1>
 <div class="gridStyle" ng-grid="gridOptions"></div>
 <button ui-sref="addpatch" class="btn btn-primary">Ajouter un patch</button>
+<button ng-class="{disabled: selectedPatchs.length == 0}" ui-sref="updatepatch({id:selectedPatchs[0].id})" class="btn btn-primary">Mettre à jour</button>
+<button ng-class="{disabled: selectedPatchs.length == 0}" ng-click="removeSelectedPatchs()" class="btn btn-primary">Supprimer</button>

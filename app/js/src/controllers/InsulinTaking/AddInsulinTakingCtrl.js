@@ -1,7 +1,9 @@
-var InsulinTakingCtrl = module.exports = function ($scope, InsulinTakingService) {
+var InsulinTakingCtrl = module.exports = function ($scope, $state, InsulinTakingService) {
     this.$scope = $scope;
+    this.$state = $state;
     this.InsulinTakingService = InsulinTakingService;
     $scope.date = new Date();
+    $scope.glycemia = 0;
 
     $scope.hstep = 1;
     $scope.mstep = 15;
@@ -27,7 +29,9 @@ var InsulinTakingCtrl = module.exports = function ($scope, InsulinTakingService)
 };
 
 InsulinTakingCtrl.prototype.ajouterInsulinTaking = function() {
-    this.InsulinTakingService.addInsulinTaking(this.$scope.selectedBoarders[0].id, this.$scope.date.getMilliseconds(), this.$scope.glycemia).then(function () {});
+    _this = this;
+    this.InsulinTakingService.addInsulinTaking(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(), this.$scope.glycemia).then(function () {});
+    _this.$state.go('insulinTaking');
 };
 
 //InsulinDosageCtrl.prototype.getInsulinDosages = function() {

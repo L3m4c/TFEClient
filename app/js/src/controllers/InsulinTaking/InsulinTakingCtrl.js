@@ -1,6 +1,6 @@
-var InsulinTakingCtrl = module.exports = function ($scope, InsulinTakingService) {
+var InsulinTakingCtrl = module.exports = function ($scope, $state, InsulinTakingService) {
     $scope = $scope;
-
+    $scope.selectedInsulinTakings = [];
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -25,9 +25,9 @@ var InsulinTakingCtrl = module.exports = function ($scope, InsulinTakingService)
         showFooter: false,
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
-        multiSelect: false,
+        multiSelect: true,
         afterSelectionChange: function(row, event) {
-            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+            $scope.selectedInsulinTakings = angular.copy(row.config.selectedItems);
         },
         showGroupPanel: true
     };
@@ -38,4 +38,10 @@ var InsulinTakingCtrl = module.exports = function ($scope, InsulinTakingService)
             return insulinTaking;
         });
     });
+
+    $scope.removeSelectedInsulinTakings = function () {
+        InsulinTakingService.removeInsulinTakings($scope.selectedInsulinTakings).then(function () {
+            $state.go('reload', {reload:'insulinTaking'});
+        });
+    }
 };

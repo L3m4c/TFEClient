@@ -1,6 +1,6 @@
-var SwaddleCtrl = module.exports = function ($scope, SwaddleService) {
+var SwaddleCtrl = module.exports = function ($scope, $state, SwaddleService) {
     $scope = $scope;
-
+    $scope.selectedSwaddles = [];
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -21,9 +21,9 @@ var SwaddleCtrl = module.exports = function ($scope, SwaddleService) {
         showFooter: false,
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
-        multiSelect: false,
+        multiSelect: true,
         afterSelectionChange: function(row, event) {
-            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+            $scope.selectedSwaddles = angular.copy(row.config.selectedItems);
         },
         showGroupPanel: true
     };
@@ -34,4 +34,10 @@ var SwaddleCtrl = module.exports = function ($scope, SwaddleService) {
             return swaddle;
         });
     });
+
+    $scope.removeSelectedSwaddles = function () {
+    SwaddleService.removeSwaddles($scope.selectedSwaddles).then(function () {
+        $state.go('reload', {reload:'swaddle'});
+    });
+}
 };

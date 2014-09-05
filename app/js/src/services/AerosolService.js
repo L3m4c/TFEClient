@@ -17,7 +17,7 @@ AerosolService.prototype.addAerosol = function (idBoarder, date, doctor, nameMed
     return this.$http.post(this.SERVER_ROOT + 'aerosol', data, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }
     }).then(function (data) {
 
@@ -30,7 +30,7 @@ AerosolService.prototype.getAerosols = function () {
     var _this = this;
     return this.$http.get(this.SERVER_ROOT + 'aerosol/all', {
         headers: {
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }}).then(function (response) {
         return response.data;
     }).catch(function (response) {
@@ -42,7 +42,7 @@ AerosolService.prototype.getAerosol = function (id) {
     var _this = this;
     return this.$http.get(this.SERVER_ROOT + 'aerosol?id=' + id, {
         headers: {
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }}).then(function (response) {
         return response.data;
     }).catch(function (response) {
@@ -57,7 +57,7 @@ AerosolService.prototype.updateAerosol = function (id, idBoarder, date, doctor, 
     data += '&doctor=' + doctor + '&nameMedic=' + nameMedic + '&dosage=' + dosage + '&unit=' + unit;
     return this.$http.put(this.SERVER_ROOT + 'aerosol?' + data, {
         headers: {
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }}).then(function (response) {
         return response.data;
     }).catch(function (response) {

@@ -1,5 +1,6 @@
-var AddPatchCtrl = module.exports = function ($scope, PatchService) {
+var AddPatchCtrl = module.exports = function ($scope, $state, PatchService) {
     this.$scope = $scope;
+    this.$state = $state;
     this.PatchService = PatchService;
     $scope.date = new Date();
     //$scope.dateStart = new Date();
@@ -7,6 +8,7 @@ var AddPatchCtrl = module.exports = function ($scope, PatchService) {
     $scope.doctor = "";
     $scope.nameMedic = "";
     $scope.unit = "";
+    $scope.dosage = 0;
 
     $scope.hstep = 1;
     $scope.mstep = 15;
@@ -31,7 +33,9 @@ var AddPatchCtrl = module.exports = function ($scope, PatchService) {
 };
 
 AddPatchCtrl.prototype.ajouterPatch = function() {
+    _this = this;
     this.PatchService.addPatch(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.doctor,this.$scope.nameMedic,this.$scope.dosage,this.$scope.unit).then(function () {});
+    _this.$state.go('patch');
        // this.$scope.dateStart.getTime(),
        // this.$scope.dateEnd.getTime()
 

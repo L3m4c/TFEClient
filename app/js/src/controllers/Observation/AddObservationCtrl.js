@@ -1,5 +1,6 @@
-var AddObservationCtrl = module.exports = function ($scope, ObservationService) {
+var AddObservationCtrl = module.exports = function ($scope, $state, ObservationService) {
     this.$scope = $scope;
+    this.$state = $state;
     this.ObservationService = ObservationService;
     $scope.date = new Date();
     $scope.comment = "";
@@ -27,5 +28,7 @@ var AddObservationCtrl = module.exports = function ($scope, ObservationService) 
 };
 
 AddObservationCtrl.prototype.ajouterObservation = function() {
+    _this = this;
     this.ObservationService.addObservation(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(), this.$scope.comment).then(function () {});
+    _this.$state.go('observation');
 };

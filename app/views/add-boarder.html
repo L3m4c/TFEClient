@@ -1,0 +1,29 @@
+<h1>Pensionnaire</h1>
+<boarderlist ng-show="!update" selected-boarders="selectedBoarders"></boarderlist>
+<div ng-show="update">Boarder : {{selectedBoarder.name + " " + selectedBoarder.surname}}</div>
+<p>Nom:
+    <input type="text" ng-model="name"/>
+</p>
+<p>Prénom:
+    <input type="text" ng-model="surname"/>
+</p>
+<p>Chambre:
+    <input type="int" ng-model="room"/>
+</p>
+<p>Age:
+    <input type="int" ng-model="age"/>
+</p>
+<p>Date de naissance:
+    <input type="text" ng-model="dateBirth"/>
+</p>
+<p>Mutuel:
+    <input type="text" ng-model="mutuel"/>
+</p>
+<p>Personne responsable:
+    <input type="text" ng-model="personResponsible"/>
+</p>
+<p>Téléphone:
+    <input type="text" ng-model="phone"/>
+</p>
+<button ng-show="!update" ng-click="ctrl.ajouterBoarder()" class="btn btn-primary">Ajouter</button>
+<button ng-show="update" ng-click="ctrl.updateBoarder()" class="btn btn-primary">Update</button>

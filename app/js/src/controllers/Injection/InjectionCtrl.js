@@ -1,6 +1,6 @@
-var InjectionCtrl = module.exports = function ($scope, InjectionService) {
+var InjectionCtrl = module.exports = function ($scope, $state, InjectionService) {
     $scope = $scope;
-
+    $scope.selectedInjections = [];
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -25,9 +25,9 @@ var InjectionCtrl = module.exports = function ($scope, InjectionService) {
         showFooter: false,
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
-        multiSelect: false,
+        multiSelect: true,
         afterSelectionChange: function(row, event) {
-            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+            $scope.selectedInjections = angular.copy(row.config.selectedItems);
         },
         showGroupPanel: true
     };
@@ -38,4 +38,9 @@ var InjectionCtrl = module.exports = function ($scope, InjectionService) {
             return injection;
         });
     });
+    $scope.removeSelectedInjections = function () {
+        InjectionService.removeInjections($scope.selectedInjections).then(function () {
+            $state.go('reload', {reload:'injection'});
+        });
+    }
 };

@@ -1,3 +1,4 @@
 <h1>Liste des langes</h1>
 <div class="gridStyle" ng-grid="gridOptions"></div>
 <button ui-sref="addswaddle" class="btn btn-primary">Ajouter un lange</button>
+<button ng-class="{disabled: selectedSwaddles.length == 0}" ng-click="removeSelectedSwaddles()" class="btn btn-primary">Supprimer</button>

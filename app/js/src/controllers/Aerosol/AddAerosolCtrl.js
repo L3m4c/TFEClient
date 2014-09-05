@@ -9,6 +9,7 @@ var AddAerosolCtrl = module.exports = function ($scope, $state, AerosolService) 
     $scope.doctor = "";
     $scope.nameMedic = "";
     $scope.unit = "";
+    $scope.dosage = 0;
 
     $scope.hstep = 1;
     $scope.mstep = 15;

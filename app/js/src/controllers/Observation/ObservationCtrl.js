@@ -1,6 +1,6 @@
-var ObservationCtrl = module.exports = function ($scope, ObservationService) {
+var ObservationCtrl = module.exports = function ($scope, $state, ObservationService) {
     $scope = $scope;
-
+    $scope.selectedObservations = [];
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -25,9 +25,9 @@ var ObservationCtrl = module.exports = function ($scope, ObservationService) {
         showFooter: false,
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
-        multiSelect: false,
+        multiSelect: true,
         afterSelectionChange: function(row, event) {
-            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+            $scope.selectedObservations = angular.copy(row.config.selectedItems);
         },
         showGroupPanel: true
     };
@@ -38,4 +38,9 @@ var ObservationCtrl = module.exports = function ($scope, ObservationService) {
             return observation;
         });
     });
+    $scope.removeSelectedObservations = function () {
+        ObservationService.removeObservations($scope.selectedObservations).then(function () {
+            $state.go('reload', {reload:'observation'});
+        });
+    }
 };

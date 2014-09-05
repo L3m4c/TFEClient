@@ -1,7 +1,9 @@
-var AddSwaddleCtrl = module.exports = function ($scope, SwaddleService) {
+var AddSwaddleCtrl = module.exports = function ($scope, $state, SwaddleService) {
     this.$scope = $scope;
     this.SwaddleService = SwaddleService;
+    this.$state = $state;
     $scope.date = new Date();
+    $scope.selectedSwaddles = [];
 
     $scope.hstep = 1;
     $scope.mstep = 15;
@@ -26,5 +28,10 @@ var AddSwaddleCtrl = module.exports = function ($scope, SwaddleService) {
 };
 
 AddSwaddleCtrl.prototype.ajouterSwaddle = function() {
-    this.SwaddleService.addSwaddle(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime()).then(function () {});
+    var _this = this;
+    if (this.$scope.selectedSwaddles.length !== 0) {
+        this.SwaddleService.addSwaddle(this.$scope.selectedSwaddles[0].id, this.$scope.date.getTime()).then(function () {
+            _this.$state.go('swaddle');
+        });
+    }
 };

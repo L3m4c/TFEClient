@@ -1,5 +1,6 @@
-var AddInjectionCtrl = module.exports = function ($scope, InjectionService) {
+var AddInjectionCtrl = module.exports = function ($scope, $state, InjectionService) {
     this.$scope = $scope;
+    this.$state = $state;
     this.InjectionService = InjectionService;
     $scope.date = new Date();
     //$scope.dateStart = new Date();
@@ -8,6 +9,7 @@ var AddInjectionCtrl = module.exports = function ($scope, InjectionService) {
     $scope.nameMedic = "";
     $scope.unit = "";
     $scope.establishment= "";
+    $scope.dosage= 0;
 
     $scope.hstep = 1;
     $scope.mstep = 15;
@@ -32,7 +34,9 @@ var AddInjectionCtrl = module.exports = function ($scope, InjectionService) {
 };
 
 AddInjectionCtrl.prototype.ajouterInjection = function() {
-    this.InjectionService.addInjection(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.doctor,this.$scope.nameMedic,this.$scope.dosage,this.$scope.unit,this.$scope.establishment).then(function () {});
+    _this = this;
+    this.InjectionService.addInjection(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.doctor,this.$scope.establishment,this.$scope.nameMedic,this.$scope.dosage,this.$scope.unit).then(function () {});
+    _this.$state.go('injection');
     // this.$scope.dateStart.getTime(),
     // this.$scope.dateEnd.getTime()
 

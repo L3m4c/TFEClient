@@ -1,5 +1,6 @@
-<h1>Insuline</h1>
-<h2>Prise de glycémie</h2>
+<h1>Prise de glycémie</h1>
 <div class="gridStyle" ng-grid="gridOptions"></div>
 <button ui-sref="addinsulinTaking" class="btn btn-primary">Ajouter une prise glycémique</button>
+<button ng-class="{disabled: selectedInsulinTakings.length == 0}" ui-sref="updateinsulinTaking({id:selectedInsulinTakings[0].id})" class="btn btn-primary">Mettre à jour</button>
+<button ng-class="{disabled: selectedInsulinTakings.length == 0}" ng-click="removeSelectedInsulinTakings()" class="btn btn-primary">Supprimer</button>
 

@@ -1,3 +1,5 @@
 <h1>Liste des injections</h1>
 <div class="gridStyle" ng-grid="gridOptions"></div>
 <button ui-sref="addinjection" class="btn btn-primary">Ajouter une injection</button>
+<button ng-class="{disabled: selectedInjections.length == 0}" ui-sref="updateinjection({id:selectedInjections[0].id})" class="btn btn-primary">Mettre à jour</button>
+<button ng-class="{disabled: selectedInjections.length == 0}" ng-click="removeSelectedInjections()" class="btn btn-primary">Supprimer</button>

@@ -1,6 +1,6 @@
-var TherapeuticCtrl = module.exports = function ($scope, TherapeuticService) {
+var TherapeuticCtrl = module.exports = function ($scope, $state, TherapeuticService) {
     $scope = $scope;
-
+    $scope.selectedTherapeutics = [];
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -25,9 +25,9 @@ var TherapeuticCtrl = module.exports = function ($scope, TherapeuticService) {
         showFooter: false,
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
-        multiSelect: false,
+        multiSelect: true,
         afterSelectionChange: function(row, event) {
-            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+            $scope.selectedTherapeutics = angular.copy(row.config.selectedItems);
         },
         showGroupPanel: true
     };
@@ -38,4 +38,9 @@ var TherapeuticCtrl = module.exports = function ($scope, TherapeuticService) {
             return therapeutic;
         });
     });
+    $scope.removeSelectedTherapeutics = function () {
+        TherapeuticService.removeTherapeutics($scope.selectedTherapeutics).then(function () {
+            $state.go('reload', {reload:'therapeutic'});
+        });
+    }
 };

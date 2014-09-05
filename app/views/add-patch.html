@@ -1,4 +1,5 @@
-<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<boarderlist ng-show="!update" selected-boarders="selectedBoarders"></boarderlist>
+<div ng-show="update">Boarder : {{selectedBoarder.name + " " + selectedBoarder.surname}}</div>
 <div>
     <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
     <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
@@ -21,5 +22,6 @@
     <p>Unité:
         <input type="text" ng-model="unit"/>
     </p>
-    <button ng-click="ctrl.ajouterPatch()" class="btn btn-primary" ui-sref="patch">Valider</button>
+    <button ng-show="!update" ng-click="ctrl.ajouterPatch()" class="btn btn-primary">Valider</button>
+    <button ng-show="update" ng-click="ctrl.updatePatch()" class="btn btn-primary">Update</button>
 </div>

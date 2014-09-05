@@ -14,7 +14,7 @@ MobilizationService.prototype.addMobilization = function (idBoarder, date, help,
     return this.$http.post(this.SERVER_ROOT + 'mobilization', data, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'BBasic ZGFtOmRhbQ=='
         }
     }).then(function (data) {
 
@@ -27,7 +27,7 @@ MobilizationService.prototype.getMobilizations = function () {
     var _this = this;
     return this.$http.get(this.SERVER_ROOT + 'mobilization/all', {
         headers: {
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }}).then(function (response) {
         return response.data;
     }).catch(function (response) {

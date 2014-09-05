@@ -1,0 +1,22 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <h3>Berges</h3>
+    <p>Régulières:
+        <input type="checkbox" ng-model="regular"/>
+    </p>
+    <p>Irrégulières:
+        <input type="checkbox" ng-model="irregular"/>
+    </p>
+    <p>Sillon d'élimination:
+        <input type="checkbox" ng-model="furrow"/>
+    </p>
+    <p>Décollement:
+        <input type="checkbox" ng-model="detachment"/>
+    </p>
+    <p>Bourgeonnement:
+        <input type="checkbox" ng-model="budding"/>
+    </p>
+    <button ng-click="ctrl.ajouterEmbankment()" class="btn btn-primary" ui-sref="embankment">Valider</button>
+</div>

@@ -1,6 +1,6 @@
-var PatchCtrl = module.exports = function ($scope, PatchService) {
+var PatchCtrl = module.exports = function ($scope, $state, PatchService) {
     $scope = $scope;
-
+    $scope.selectedPatchs = [];
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -25,9 +25,9 @@ var PatchCtrl = module.exports = function ($scope, PatchService) {
         showFooter: false,
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
-        multiSelect: false,
+        multiSelect: true,
         afterSelectionChange: function(row, event) {
-            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+            $scope.selectedPatchs = angular.copy(row.config.selectedItems);
         },
         showGroupPanel: true
     };
@@ -38,4 +38,10 @@ var PatchCtrl = module.exports = function ($scope, PatchService) {
             return patch;
         });
     });
+
+    $scope.removeSelectedPatchs = function () {
+        PatchService.removePatchs($scope.selectedPatchs).then(function () {
+            $state.go('reload', {reload:'patch'});
+        });
+    }
 };

@@ -1,0 +1,22 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <h3>Aspect</h3>
+    <p>Rougeur:
+        <input type="checkbox" ng-model="redness"/>
+    </p>
+    <p>Fibrine:
+        <input type="checkbox" ng-model="fibrin"/>
+    </p>
+    <p>Nécrose:
+        <input type="checkbox" ng-model="necrosis"/>
+    </p>
+    <p>Epidermisation (rose):
+        <input type="checkbox" ng-model="pink"/>
+    </p>
+    <p>Autre:
+        <input type="text" ng-model="aspectOther"/>
+    </p>
+    <button ng-click="ctrl.ajouterAspect()" class="btn btn-primary" ui-sref="aspect">Valider</button>
+</div>

@@ -1,5 +1,6 @@
-var AddTherapeuticCtrl = module.exports = function ($scope, TherapeuticService) {
+var AddTherapeuticCtrl = module.exports = function ($scope, $state, TherapeuticService) {
     this.$scope = $scope;
+    this.$state = $state;
     this.TherapeuticService = TherapeuticService;
     $scope.date = new Date();
     $scope.preparation = false;
@@ -32,7 +33,8 @@ var AddTherapeuticCtrl = module.exports = function ($scope, TherapeuticService) 
 };
 
 AddTherapeuticCtrl.prototype.ajouterTherapeutic = function() {
+    _this = this;
     this.TherapeuticService.addTherapeutic(this.$scope.selectedBoarders[0].id, this.$scope.date.getTime(),this.$scope.preparation,
     this.$scope.adMorning,this.$scope.adMidday,this.$scope.adEvening,this.$scope.adNight).then(function () {});
-
+    _this.$state.go('therapeutic');
 };

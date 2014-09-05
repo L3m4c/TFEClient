@@ -1,4 +1,6 @@
-var BoarderCtrl = module.exports = function ($scope, BoarderService) {
+var BoarderCtrl = module.exports = function ($scope, $state, BoarderService) {
+    $scope = $scope;
+    $scope.selectedBoarders = [];
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -21,13 +23,25 @@ var BoarderCtrl = module.exports = function ($scope, BoarderService) {
                 displayName : 'Age'
             },
             {
+                field : 'dateBirth',
+                displayName : 'Date de naissance'
+            },
+            {
+                field : 'mutuel',
+                displayName : 'Mutuel'
+            },
+            {
+                field : 'personResponsible',
+                displayName : 'Personne responsable'
+            },
+            {
                 field : 'phone',
                 displayName : 'Téléphone'
             }],
         showFooter: false,
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
-        multiSelect: false,
+        multiSelect: true,
         afterSelectionChange: function(row, event) {
             $scope.selectedBoarders = angular.copy(row.config.selectedItems);
         },
@@ -35,7 +49,15 @@ var BoarderCtrl = module.exports = function ($scope, BoarderService) {
     };
 
     BoarderService.getBoarders().then(function (data) {
-        $scope.data = data;
+        $scope.data = data.map(function(boarder) {
 
+            return boarder;
+        });
     });
+
+    $scope.removeSelectedBoarders = function () {
+        BoarderService.removeBoarders($scope.selectedBoarders).then(function () {
+            $state.go('reload', {reload:'boarder'});
+        });
+    }
 };

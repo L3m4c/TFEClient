@@ -23,9 +23,9 @@ var AerosolCtrl = module.exports = function ($scope, AerosolService) {
         showFooter: false,
         totalServerItems: 'totalServerItems',
         enableCellSelection: false,
-        multiSelect: false,
+        multiSelect: true,
         afterSelectionChange: function(row, event) {
-            $scope.selectedBoarders = angular.copy(row.config.selectedItems);
+            $scope.selectedAerosols = angular.copy(row.config.selectedItems);
         },
         showGroupPanel: true
     };

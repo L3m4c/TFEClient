@@ -41,6 +41,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: 'views/menu.html',
             controller: 'MenuCtrl as ctrl'
+        }).state('boarder', {
+            url: "/boarder",
+            parent: "main-content",
+            templateUrl: 'views/boarder.html',
+            controller: 'BoarderCtrl as ctrl'
+        }).state('addboarder', {
+            url: "/boarder/add",
+            parent: "main-content",
+            templateUrl: 'views/add-boarder.html',
+            controller: 'AddBoarderCtrl as ctrl'
+        }).state('updateboarder', {
+            url: "/boarder/update/:id",
+            parent: "main-content",
+            templateUrl: '../../views/add-boarder.html',
+            controller: 'UpdateBoarderCtrl as ctrl'
         }).state('meal', {
             url: "/meal",
             parent: "main-content",
@@ -71,6 +86,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-insulinDosage.html',
             controller: 'AddInsulinDosageCtrl as ctrl'
+        }).state('updateinsulinDosage', {
+            url: "/insulinDosage/update/:id",
+            parent: "main-content",
+            templateUrl: '../../views/add-insulinDosage.html',
+            controller: 'UpdateInsulinDosageCtrl as ctrl'
         }).state('observation', {
             url: "/observation",
             parent: "main-content",
@@ -81,6 +101,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-observation.html',
             controller: 'AddObservationCtrl as ctrl'
+        }).state('updateobservation', {
+            url: "/observation/update/:id",
+            parent: "main-content",
+            templateUrl: '../../views/add-observation.html',
+            controller: 'UpdateObservationCtrl as ctrl'
         }).state('patch', {
             url: "/patch",
             parent: "main-content",
@@ -91,6 +116,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-patch.html',
             controller: 'AddPatchCtrl as ctrl'
+        }).state('updatepatch', {
+            url: "/patch/update/:id",
+            parent: "main-content",
+            templateUrl: '../../views/add-patch.html',
+            controller: 'UpdatePatchCtrl as ctrl'
         }).state('aerosol', {
             url: "/aerosol",
             parent: "main-content",
@@ -136,6 +166,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-insulinTaking.html',
             controller: 'AddInsulinTakingCtrl as ctrl'
+        }).state('updateinsulinTaking', {
+            url: "/insulinTaking/update/:id",
+            parent: "main-content",
+            templateUrl: '../../views/add-insulinTaking.html',
+            controller: 'UpdateInsulinTakingCtrl as ctrl'
         }).state('therapeutic', {
             url: "/therapeutic",
             parent: "main-content",
@@ -146,6 +181,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-therapeutic.html',
             controller: 'AddTherapeuticCtrl as ctrl'
+        }).state('updatetherapeutic', {
+            url: "/therapeutic/update/:id",
+            parent: "main-content",
+            templateUrl: '../../views/add-therapeutic.html',
+            controller: 'UpdateTherapeuticCtrl as ctrl'
         }).state('injection', {
             url: "/injection",
             parent: "main-content",
@@ -156,6 +196,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "main-content",
             templateUrl: '../../views/add-injection.html',
             controller: 'AddInjectionCtrl as ctrl'
+        }).state('updateinjection', {
+            url: "/injection/update/:id",
+            parent: "main-content",
+            templateUrl: '../../views/add-injection.html',
+            controller: 'UpdateInjectionCtrl as ctrl'
         }).state('hygiene', {
                 url: "/hygiene",
                 parent: "main-content",

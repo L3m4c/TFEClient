@@ -14,7 +14,7 @@ ParameterService.prototype.addParameter= function (idBoarder, date, pulse, tensi
     return this.$http.post(this.SERVER_ROOT + 'parameter', data, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }
     }).then(function (data) {
 
@@ -27,7 +27,7 @@ ParameterService.prototype.getParameters = function () {
     var _this = this;
     return this.$http.get(this.SERVER_ROOT + 'parameter/all', {
         headers: {
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }}).then(function (response) {
         return response.data;
     }).catch(function (response) {

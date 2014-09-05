@@ -1,3 +1,5 @@
 <h1>Liste des observation</h1>
 <div class="gridStyle" ng-grid="gridOptions"></div>
 <button ui-sref="addobservation" class="btn btn-primary">Ajouter une observation</button>
+<button ng-class="{disabled: selectedObservations.length == 0}" ui-sref="updateobservation({id:selectedObservations[0].id})" class="btn btn-primary">Mettre à jour</button>
+<button ng-class="{disabled: selectedObservations.length == 0}" ng-click="removeSelectedObservations()" class="btn btn-primary">Supprimer</button>

@@ -15,7 +15,7 @@ WoundService.prototype.addWound = function (idBoarder, date, localisation, type,
     return this.$http.post(this.SERVER_ROOT + 'wound', data, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }
     }).then(function (data) {
 
@@ -28,7 +28,7 @@ WoundService.prototype.getWounds = function () {
     var _this = this;
     return this.$http.get(this.SERVER_ROOT + 'wound/all', {
         headers: {
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }}).then(function (response) {
         return response.data;
     }).catch(function (response) {

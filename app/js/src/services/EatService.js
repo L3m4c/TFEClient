@@ -15,7 +15,7 @@ EatService.prototype.addEat = function (idBoarder, date, priorAid, fullAid, eatS
     return this.$http.post(this.SERVER_ROOT + 'eat', data, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }
     }).then(function (data) {
 
@@ -28,7 +28,7 @@ EatService.prototype.getEats = function () {
     var _this = this;
     return this.$http.get(this.SERVER_ROOT + 'eat/all', {
         headers: {
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }}).then(function (response) {
         return response.data;
     }).catch(function (response) {

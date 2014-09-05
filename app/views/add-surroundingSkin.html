@@ -1,0 +1,31 @@
+<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<div>
+    <timepicker class="time-position" ng-model="date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <h3>Peau avoisinante</h3>
+    <p>Saine:
+        <input type="checkbox" ng-model="healthy"/>
+    </p>
+    <p>Fragile:
+        <input type="checkbox" ng-model="fragile"/>
+    </p>
+    <p>Sèche:
+        <input type="checkbox" ng-model="dry"/>
+    </p>
+    <p>Hyperpigmentée:
+        <input type="checkbox" ng-model="hyperpigmented"/>
+    </p>
+    <p>Hyperkératosée:
+        <input type="checkbox" ng-model="hyperkeration"/>
+    </p>
+    <p>Inflammatoire:
+        <input type="checkbox" ng-model="inflammatory"/>
+    </p>
+    <p>Macérée:
+        <input type="checkbox" ng-model="macerated"/>
+    </p>
+    <p>Ulcéré:
+        <input type="checkbox" ng-model="ulcerated"/>
+    </p>
+    <button ng-click="ctrl.ajouterSurroundingSkin()" class="btn btn-primary" ui-sref="surroundingSkin">Valider</button>
+</div>

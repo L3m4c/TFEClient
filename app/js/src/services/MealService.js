@@ -11,7 +11,7 @@ MealService.prototype.addMeal = function (idBoarder, date) {
     return this.$http.post(this.SERVER_ROOT + 'meal', data, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }
     }).then(function (data) {
 
@@ -24,7 +24,7 @@ MealService.prototype.getMeals = function () {
     var _this = this;
     return this.$http.get(this.SERVER_ROOT + 'meal/all', {
         headers: {
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }}).then(function (response) {
         return response.data;
     }).catch(function (response) {
@@ -37,7 +37,7 @@ MealService.prototype.removeMeal = function (idMeal) {
     return this.$http.delete(this.SERVER_ROOT + 'meal?id=' + idMeal, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic c2FtOnNhbQ=='
+            'Authorization': 'Basic ZGFtOmRhbQ=='
         }
     }).then(function (data) {
 
@@ -61,4 +61,4 @@ MealService.prototype.removeMeals = function (meals) {
         deferGlobal.resolve();
     });
     return deferGlobal.promise;
-}
+};
