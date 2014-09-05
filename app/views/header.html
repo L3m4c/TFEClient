@@ -13,8 +13,8 @@
             <ul class="nav navbar-nav">
                 <li ui-sref-active="active"><a ui-sref="menu">{{'header.label.menu' | translate}}</a></li>
                 <li ui-sref-active="active"><a ui-sref="boarder">{{'header.label.pensionnaire' | translate}}</a></li>
-                <li ui-sref-active="active"><a ui-sref="contact">Recherche</a></li>
                 <li><a ng-click="ctrl.disconnect()"> <i class="fa fa-power-off"></i> {{'common.label.disconnect' | translate}}</a></li>
+                <li><a><input class="search-input" type="text" ng-model="$rootScope.search" placeholder="Recherche..." /></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

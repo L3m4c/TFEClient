@@ -1,7 +1,13 @@
-var MealCtrl = module.exports = function ($scope, $state, MealService) {
+var MealCtrl = module.exports = function ($scope, $state, MealService, $rootScope) {
     $scope = $scope;
     $scope.selectedMeals = [];
+    $scope.filterOptions = {
+        filterText: $rootScope.search
+    };
 
+    $rootScope.$watch('search', function(newValue) {
+        $scope.filterOptions.filterText = newValue;
+    });
     $scope.gridOptions = {
         i18n: 'fr',
         data: 'data',
@@ -25,7 +31,8 @@ var MealCtrl = module.exports = function ($scope, $state, MealService) {
         afterSelectionChange: function(row, event) {
             $scope.selectedMeals = angular.copy(row.config.selectedItems);
         },
-        showGroupPanel: true
+        showGroupPanel: true,
+        filterOptions: $scope.filterOptions
     };
 
     MealService.getMeals().then(function (data) {

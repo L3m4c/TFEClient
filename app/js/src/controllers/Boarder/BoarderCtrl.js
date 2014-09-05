@@ -1,6 +1,13 @@
-var BoarderCtrl = module.exports = function ($scope, $state, BoarderService) {
+var BoarderCtrl = module.exports = function ($scope, $state, BoarderService, $rootScope) {
     $scope = $scope;
     $scope.selectedBoarders = [];
+    $scope.filterOptions = {
+        filterText: $rootScope.search
+    };
+
+    $rootScope.$watch('search', function(newValue) {
+        $scope.filterOptions.filterText = newValue;
+    });
 
     $scope.gridOptions = {
         i18n: 'fr',
@@ -20,23 +27,28 @@ var BoarderCtrl = module.exports = function ($scope, $state, BoarderService) {
             },
             {
                 field : 'age',
-                displayName : 'Age'
+                displayName : 'Age',
+                visible: !!$scope.showDetailedInformations
             },
             {
                 field : 'dateBirth',
-                displayName : 'Date de naissance'
+                displayName : 'Date de naissance',
+                visible: !!$scope.showDetailedInformations
             },
             {
                 field : 'mutuel',
-                displayName : 'Mutuel'
+                displayName : 'Mutuel',
+                visible: !!$scope.showDetailedInformations
             },
             {
                 field : 'personResponsible',
-                displayName : 'Personne responsable'
+                displayName : 'Personne responsable',
+                visible: !!$scope.showDetailedInformations
             },
             {
                 field : 'phone',
-                displayName : 'Téléphone'
+                displayName : 'Téléphone',
+                visible: !!$scope.showDetailedInformations
             }],
         showFooter: false,
         totalServerItems: 'totalServerItems',
@@ -45,7 +57,8 @@ var BoarderCtrl = module.exports = function ($scope, $state, BoarderService) {
         afterSelectionChange: function(row, event) {
             $scope.selectedBoarders = angular.copy(row.config.selectedItems);
         },
-        showGroupPanel: false
+        showGroupPanel: false,
+        filterOptions: $scope.filterOptions
     };
 
     BoarderService.getBoarders().then(function (data) {

@@ -1,5 +1,6 @@
+{{filterOptions}}
 <h1>Pensionnaire</h1>
-<boarderlist selected-boarders="selectedBoarders"></boarderlist>
+<boarderlist selected-boarders="selectedBoarders" show-detailed-informations="true"></boarderlist>
 <button ui-sref="addboarder" class="btn btn-primary">Ajouter</button>
 <button ng-class="{disabled: selectedBoarders.length == 0}" ui-sref="updateboarder({id:selectedBoarders[0].id})" class="btn btn-primary">Mettre à jour</button>
 <button ng-class="{disabled: selectedBoarders.length == 0}" ng-click="removeSelectedBoarders()" class="btn btn-primary">Supprimer</button>

@@ -3,7 +3,8 @@ var BoarderListDirective = module.exports =  function(BoarderService) {
         restrict: 'E',
         transclude: true,
         scope: {
-            selectedBoarders: "="
+            selectedBoarders: "=",
+            showDetailedInformations: "@"
         },
         controller: "BoarderCtrl",
         templateUrl: 'views/directives/boarderlist.html',
